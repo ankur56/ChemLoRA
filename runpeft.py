@@ -87,9 +87,9 @@ def get_data(prop_to_get):
         return df
     
     #unpickle the data
-    train_df = pickle_to_df("qm9_key_smiles_1_train_data_without_validation.pickle")
-    val_df = pickle_to_df("qm9_key_smiles_1_validation_data.pickle")
-    test_df = pickle_to_df("qm9_key_smiles_1_holdout_data.pickle")
+    train_df = pickle_to_df("pickles/qm9_key_smiles_1_train_data_without_validation.pickle")
+    val_df = pickle_to_df("pickles/qm9_key_smiles_1_validation_data.pickle")
+    test_df = pickle_to_df("pickles/qm9_key_smiles_1_holdout_data.pickle")
     
     #format the data as text for the LLM
     formatter = RegressionFormatter(representation_column='SMILES',
@@ -392,7 +392,7 @@ def run_all(model):
     plt.scatter(outs['energy_true'], outs['energy_out'])
     pearsonr(outs['energy_true'], outs['energy_out'])
     plt.axis('square')
-    plt.savefig("outputs_{model}_b3lyp.png")
+    plt.savefig(f"outputs_{model}_b3lyp.png")
     plt.clf()
 
     df_train,df_val,df_test = get_data("g4mp2")
@@ -403,7 +403,7 @@ def run_all(model):
     plt.scatter(outs['energy_true'], outs['energy_out'])
     pearsonr(outs['energy_true'], outs['energy_out'])
     plt.axis('square')
-    plt.savefig("outputs_{model}_g4mp2.png")
+    plt.savefig(f"outputs_{model}_g4mp2.png")
     plt.clf()
 
     df_train,df_val,df_test = get_data("en_diff")
@@ -414,7 +414,7 @@ def run_all(model):
     plt.scatter(outs['energy_true'], outs['energy_out'])
     pearsonr(outs['energy_true'], outs['energy_out'])
     plt.axis('square')
-    plt.savefig("outputs_{model}_endiff.png")
+    plt.savefig(f"outputs_{model}_endiff.png")
     plt.clf()
 
     df_train,df_val,df_test = get_data("bandgap")
@@ -425,7 +425,7 @@ def run_all(model):
     plt.scatter(outs['energy_true'], outs['energy_out'])
     pearsonr(outs['energy_true'], outs['energy_out'])
     plt.axis('square')
-    plt.savefig("outputs_{model}_bandgap.png")
+    plt.savefig(f"outputs_{model}_bandgap.png")
     plt.clf()
 
 if __name__ == '__main__':
