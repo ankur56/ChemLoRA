@@ -67,7 +67,7 @@ def get_data(prop_to_get):
             qm9_data = pickle.load(handle)
 
         # Convert the keys and values of the dictionary into separate lists
-        smiles_list = list(qm9_data.keys())
+        selfies_list = list(qm9_data.keys())
         property_list = list(qm9_data.values())
 
         # Extract the B3LYP atomization energy as a separate list
@@ -82,17 +82,17 @@ def get_data(prop_to_get):
         # Extract the bandgap as a separate list
         bandgap = [prop[3] for prop in property_list]
 
-        df = pd.DataFrame(list(zip(smiles_list, b3lyp_at_list, g4mp2_at_list,en_diff_list,bandgap)),
-                   columns =["SMILES", prop["b3lyp"], prop["g4mp2"], prop["en_diff"], prop["bandgap"]])
+        df = pd.DataFrame(list(zip(selfies_list, b3lyp_at_list, g4mp2_at_list,en_diff_list,bandgap)),
+                   columns =["SELFIES", prop["b3lyp"], prop["g4mp2"], prop["en_diff"], prop["bandgap"]])
         return df
     
     #unpickle the data
-    train_df = pickle_to_df("pickles/qm9_key_smiles_1_train_data_without_validation.pickle")
-    val_df = pickle_to_df("pickles/qm9_key_smiles_1_validation_data.pickle")
-    test_df = pickle_to_df("pickles/qm9_key_smiles_1_holdout_data.pickle")
+    train_df = pickle_to_df("pickles/qm9_key_selfies_1_train_data_without_validation.pickle")
+    val_df = pickle_to_df("pickles/qm9_key_selfies_1_validation_data.pickle")
+    test_df = pickle_to_df("pickles/qm9_key_selfies_1_holdout_data.pickle")
     
     #format the data as text for the LLM
-    formatter = RegressionFormatter(representation_column='SMILES',
+    formatter = RegressionFormatter(representation_column='SELFIES',
         label_column=prop[prop_to_get],
         property_name=prop[prop_to_get],
         num_digits=4
@@ -112,7 +112,7 @@ def train(
     prop: str = "b3lyp",
     output_dir: str = "outputs",
     # training hyperparams
-    batch_size: int = 256,
+    batch_size: int = 128,
     num_epochs: int = 20,
     learning_rate: float = 3e-4,
     cutoff_len: int = 256,
