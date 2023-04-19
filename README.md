@@ -1,6 +1,6 @@
 # ChemLoRA
 
-## Leveraging LLMs for Accurate Molecular Energy Predictions
+## Leveraging Large Language Models (LLMs) for Accurate Molecular Energy Predictions
 
 ### Requirements
 - [gptchem](https://github.com/kjappelbaum/gptchem)
@@ -14,9 +14,9 @@ The QM9-G4MP2 dataset is publicly available through [Materials Data Facility](ht
 
 ### Model Fine-Tuning
 
-GPT-3 is fine-tuned on the QM9-G4MP2 dataset using the GPTChem framework by running the given python script as follows,\
+GPT-3 is fine-tuned on the QM9-G4MP2 dataset using the GPTChem framework. To run the provided Python script, execute the following command:\
 `python gptchem_smiles.py`
 
-`runpeft.py` can be used to fine-tune any foundational LLM available in Hugging Face. For example, the following command could be used to fine-tune the `gpt2` model\
+The `runpeft.py` script can be used to fine-tune any foundational LLM available in Hugging Face. For example, to fine-tune the `gpt2` model, run the following command:\
 `python runpeft.py "gpt2"`
 
