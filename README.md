@@ -11,3 +11,10 @@
 
 ### Data
 The QM9-G4MP2 dataset is publicly available through [Materials Data Facility](https://petreldata.net/mdf/detail/wardlogan_machine_learning_calculations_v1.1/). 
+
+### Model Fine-Tuning
+
+GPT-3 is fine-tuned on the QM9-G4MP2 dataset using the GPTChem framework by running the given python script as follows,\
+`python gptchem_smiles.py`\
+
+
