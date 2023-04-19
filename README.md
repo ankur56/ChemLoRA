@@ -17,6 +17,6 @@ The QM9-G4MP2 dataset is publicly available through [Materials Data Facility](ht
 GPT-3 is fine-tuned on the QM9-G4MP2 dataset using the GPTChem framework by running the given python script as follows,\
 `python gptchem_smiles.py`
 
-`runpeft.py` can be used to fine-tune any foundational LLM available in Hugging Face. For example, the following command could be used to fine-tune the `gpt2` model
+`runpeft.py` can be used to fine-tune any foundational LLM available in Hugging Face. For example, the following command could be used to fine-tune the `gpt2` model\
 `python runpeft.py "gpt2"`
 
