@@ -1,1 +1,2 @@
-# chemgpt_qm9
+# ChemLoRA
+
