@@ -10,6 +10,7 @@ from sklearn.model_selection import train_test_split
 
 import matplotlib.pyplot as plt
 
+import argparse
 from scipy.stats import pearsonr
 import pickle
 import json
@@ -430,7 +431,12 @@ def run_all(model):
     plt.clf()
     """
 if __name__ == '__main__':
-     run_all("gpt2")
+    parser = argparse.ArgumentParser(description="Run the specified model for fine-tuning.")
+    parser.add_argument("model", help="The name of the LLM model to fine-tune (e.g., 'gpt2')")
+
+    args = parser.parse_args()
+    run_all(args.model)
+    
 
 
 
