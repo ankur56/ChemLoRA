@@ -384,6 +384,7 @@ def generate(
     return(df_test)
 
 def run_all(model):
+    """
     df_train,df_val,df_test = get_data("b3lyp")
     train(df_train, df_val, base_model=model, prop="b3lyp")
     outs=generate(df_test.head(1000), base_model=model, prop="b3lyp")
@@ -394,10 +395,10 @@ def run_all(model):
     plt.axis('square')
     plt.savefig(f"outputs_{model}_b3lyp.png")
     plt.clf()
-
+    """
     df_train,df_val,df_test = get_data("g4mp2")
     train(df_train, df_val, base_model=model, prop="g4mp2")
-    outs=generate(df_test.head(1000), base_model=model, prop="g4mp2")
+    outs=generate(df_test, base_model=model, prop="g4mp2")
     outs.to_json(f"outputs_{model}_g4mp2.json")
     outs=outs.dropna()
     plt.scatter(outs['energy_true'], outs['energy_out'])
@@ -408,7 +409,7 @@ def run_all(model):
 
     df_train,df_val,df_test = get_data("en_diff")
     train(df_train, df_val, base_model=model, prop="en_diff")
-    outs=generate(df_test.head(1000), base_model=model, prop="en_diff")
+    outs=generate(df_test, base_model=model, prop="en_diff")
     outs=outs.dropna()
     outs.to_json(f"outputs_{model}_en_diff.json")
     plt.scatter(outs['energy_true'], outs['energy_out'])
@@ -417,6 +418,7 @@ def run_all(model):
     plt.savefig(f"outputs_{model}_endiff.png")
     plt.clf()
 
+    """
     df_train,df_val,df_test = get_data("bandgap")
     train(df_train, df_val, base_model=model, prop="bandgap")
     outs=generate(df_test.head(1000), base_model=model, prop="bandgap")
@@ -427,7 +429,7 @@ def run_all(model):
     plt.axis('square')
     plt.savefig(f"outputs_{model}_bandgap.png")
     plt.clf()
-
+    """
 if __name__ == '__main__':
      run_all("gpt2")
 
