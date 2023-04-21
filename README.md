@@ -10,7 +10,7 @@
 - [scikit-learn](https://scikit-learn.org/stable/)
 
 ### Data
-The QM9-G4MP2 dataset is publicly available through [Materials Data Facility](https://petreldata.net/mdf/detail/wardlogan_machine_learning_calculations_v1.1/) ([GitHub link] (https://github.com/globus-labs/g4mp2-atomization-energy/tree/master/data/output)). 
+The QM9-G4MP2 dataset is publicly available through [Materials Data Facility](https://petreldata.net/mdf/detail/wardlogan_machine_learning_calculations_v1.1/) ([GitHub link](https://github.com/globus-labs/g4mp2-atomization-energy/tree/master/data/output)). 
 
 ### Model Fine-Tuning
 
