@@ -3,7 +3,8 @@
 ## Leveraging Large Language Models (LLMs) for Accurate Molecular Energy Predictions
 
 ### Requirements
-- [gptchem](https://github.com/kjappelbaum/gptchem)
+- [PyTorch](https://pytorch.org/)
+- [GPTChem](https://github.com/kjappelbaum/gptchem)
 - [transformers](https://github.com/huggingface/transformers)
 - [PEFT](https://github.com/huggingface/peft)
 - [datasets](https://github.com/huggingface/datasets)
