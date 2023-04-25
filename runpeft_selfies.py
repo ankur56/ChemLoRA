@@ -398,7 +398,7 @@ def run_all(model):
     plt.clf()
     """
     df_train,df_val,df_test = get_data("g4mp2")
-    train(df_train, df_val, base_model=model, prop="g4mp2")
+    #train(df_train, df_val, base_model=model, prop="g4mp2")
     outs=generate(df_test, base_model=model, prop="g4mp2")
     outs.to_json(f"outputs_{model}_g4mp2.json")
     outs=outs.dropna()
@@ -409,7 +409,7 @@ def run_all(model):
     plt.clf()
 
     df_train,df_val,df_test = get_data("en_diff")
-    train(df_train, df_val, base_model=model, prop="en_diff")
+    #train(df_train, df_val, base_model=model, prop="en_diff")
     outs=generate(df_test, base_model=model, prop="en_diff")
     outs=outs.dropna()
     outs.to_json(f"outputs_{model}_en_diff.json")
