@@ -3,14 +3,15 @@
 ## Leveraging Large Language Models (LLMs) for Accurate Molecular Energy Predictions
 
 ### Requirements
-- [gptchem](https://github.com/kjappelbaum/gptchem)
+- [PyTorch](https://pytorch.org/)
+- [GPTChem](https://github.com/kjappelbaum/gptchem)
 - [transformers](https://github.com/huggingface/transformers)
 - [PEFT](https://github.com/huggingface/peft)
 - [datasets](https://github.com/huggingface/datasets)
 - [scikit-learn](https://scikit-learn.org/stable/)
 
 ### Data
-The QM9-G4MP2 dataset is publicly available through [Materials Data Facility](https://petreldata.net/mdf/detail/wardlogan_machine_learning_calculations_v1.1/). 
+The QM9-G4MP2 dataset is publicly available through [Materials Data Facility](https://petreldata.net/mdf/detail/wardlogan_machine_learning_calculations_v1.1/) ([GitHub link](https://github.com/globus-labs/g4mp2-atomization-energy/tree/master/data/output)). 
 
 ### Model Fine-Tuning
 
