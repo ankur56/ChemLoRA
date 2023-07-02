@@ -24,3 +24,6 @@ The `runpeft.py` script can be used to fine-tune any foundational LLM available 
 \
 `python runpeft.py "gpt2"`
 
+## License
+This software is released under the MIT License.
+
